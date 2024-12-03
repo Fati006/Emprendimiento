@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(96, 137, 119);
+}
+header{
+    background-color: white;
+    padding: 25px;
+    border: solid white 10px;
+}
+header  a{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+    text-align: left;
+}
+section{
+    background-color: rgb(223, 242, 234);
+}
+footer{
+    background-color: white;
+    width: 250px;
+    height: 250px;
+}
