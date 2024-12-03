@@ -38,10 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $_SESSION['is_admin'] = false;
         header("Location: main.php");
+        $Insert_Usuarios = "INSERT INTO `usuarios` (`usuario`, `contraseña usuarios`) VALUES ('$name','$password')";
+        $hacer= mysqli_query($conn, $Insert_Usuarios);
+
         exit();
-        
-        $Insert_Usuarios = "INSERT INTO `usuarios` (`usuarios`, `contraseña usuarios`) VALUES ('$name', '$password')";
-        mysqli_query($conn, $Insert_Usuarios);
     }
 }
 
@@ -76,7 +76,7 @@ mysqli_close($conn);
                     <div class="card fat">
                         <div class="card-body">
                             <h4 class="card-title">Inicio de sesión</h4>
-                            <form method="POST" class="my-login-validation" novalidate="" id="login" action="login.php">
+                            <form method="POST" class="my-login-validation" novalidate="" id="login">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input id="name" type="name" class="form-control" name="name" required autofocus>

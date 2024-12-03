@@ -1,19 +1,17 @@
 <?php
 session_start();
 
-// Verificar si se ha recibido un ID de producto
-if (isset($_GET['id'])) {
-    $id_producto = $_GET['id'];
+$direc= "localhost";
+$user= "root";
+$pass= "";
+$db= "floraliza";
 
-    // Eliminar el producto del carrito
-    foreach ($_SESSION['carrito'] as $key => $producto) {
-        if ($producto['id_producto'] == $id_producto) {
-            unset($_SESSION['carrito'][$key]);
-            break;
-        }
-    }
-    // Redirigir de nuevo al carrito
-    header('Location: carrito.php');
-    exit;
-}
+$conn= mysqli_connect($direc,$user,$pass,$db);
+
+$delete= "DELETE WHERE id_producto = $id ";
+mysqli_query($conn,$delete);
+
+header('Location: carrito.php');
+exit();
 ?>
+

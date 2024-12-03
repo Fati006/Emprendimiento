@@ -14,7 +14,7 @@ if (!$conn) {
 }
 
 // Consulta para obtener los datos de los pedidos
-$quer = "SELECT pedidos.id_usuario, usuario.id_usuario AS usuario, producto.id_producto AS producto, pedidos.precio pedidos.cantidad  FROM pedidos INNER JOIN producto ON pedidos.id_producto = producto.id_producto INNER JOIN usuario ON pedidos.id_usuario = usuarios.id_usuario";
+$quer = "SELECT pedidos.id_usuario, usuario.id_usuario AS usuario, producto.id_producto AS producto, pedidos.precio pedidos.cantidad  FROM pedidos INNER JOIN producto ON pedidos.id_producto = producto.id_producto INNER JOIN usuarios ON pedidos.id_usuario = usuarios.id_usuario";
 
 $result = mysqli_query($conn, $quer);
 
