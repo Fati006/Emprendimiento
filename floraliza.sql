@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2024 a las 18:48:04
+-- Tiempo de generación: 04-12-2024 a las 14:27:44
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -32,9 +32,19 @@ CREATE TABLE `pedidos` (
   `id_producto` varchar(300) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `Precio` varchar(3000) NOT NULL,
-  `cantidad` varchar(50) NOT NULL,
-  `id_usuario` varchar(255) NOT NULL
+  `cantidad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pedidos`
+--
+
+INSERT INTO `pedidos` (`id_pedido`, `id_producto`, `nombre`, `Precio`, `cantidad`) VALUES
+(8, '', '', '', ''),
+(9, '3', 'Margaritas', '2300', '1'),
+(10, '3', 'Margaritas', '2300', '1'),
+(11, '3', 'Margaritas', '2300', '1'),
+(12, '3', 'Margaritas', '2300', '1');
 
 -- --------------------------------------------------------
 
@@ -56,7 +66,8 @@ CREATE TABLE `producto` (
 
 INSERT INTO `producto` (`id_producto`, `nombre`, `precio`, `cantidad`, `imagen`) VALUES
 (1, 'Lavandas', '1200', '23', 'admin/fotos/Lavandas.jpeg'),
-(3, 'Margaritas', '2300', '23', 'admin/fotos/margaritas.jpeg');
+(3, 'Margaritas', '2300', '23', 'admin/fotos/margaritas.jpeg'),
+(4, 'Tulipanes', '2300', '6', 'admin/fotos/Tulipanes.jpg');
 
 -- --------------------------------------------------------
 
@@ -69,6 +80,15 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(50) NOT NULL,
   `contraseña usuarios` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `usuario`, `contraseña usuarios`) VALUES
+(1, 'bel', 'argentina'),
+(2, 'flora', '123457'),
+(3, 'lola', '543567');
 
 --
 -- Índices para tablas volcadas
@@ -100,19 +120,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_producto` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
